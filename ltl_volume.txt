@@ -2,57 +2,72 @@
 
 
 
-<!-- Outbound -->
-<!-- Human Readable -->
-= ROUNDUP(<Food Pallets>) + ROUNDUP(<Equipment Pallets>)
+<!-- Outbound Initial -->
+	<!-- Human Readable -->
+	Raw pallet calculation
 
-<!-- Translated-->
-=N("Outbound pallet_count = SUM(Food Pallets) + SUM(Equipment pallets") +
-	 
-	N("SUM Food Pallets") +
-	
-		ROUNDUP(
-					n("Lentils = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.15) / 680) / 45) +
+	Sum of volume: Food Pallets + Equipment pallets 
 
-					n("Rice = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.2) / 1295) / 45) +
+	= ROUNDUP(<Food Pallets>) + ROUNDUP(<Equipment Pallets>)
 
-					n("Veggies = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.2) / 3900) / 40) +
+	<!-- Translated-->
+	=N("Outbound pallet_count = SUM(Food Pallets) + SUM(Equipment pallets") +
+		
+		N("SUM Food Pallets") +
+		
+			ROUNDUP(
+						n("Lentils = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.15) / 680) / 45) +
 
-					n("Salt = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.2) / 29,934) / 45) +
+						n("Rice = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.2) / 1295) / 45) +
 
-					n("Boxes = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.2) / 288) / 20) +
+						n("Veggies = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.2) / 3900) / 40) +
 
-					n("Bags = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
-					(((<meal_count> * 1.2) / 9600) / 64) 
-				) +
+						n("Salt = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.2) / 29,934) / 45) +
 
-			
-	N("SUM Equipment Pallets") +
+						n("Boxes = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.2) / 288) / 20) +
+
+						n("Bags = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+						(((<meal_count> * 1.2) / 9600) / 64) 
+					) +
+
 				
-		ROUNDUP(
-						N("Bin Kits = ((Assembly lines + (Backup_lines)) / Bins per pallet)") +
-						((<Assembly_lines> + ROUNDUP(<Assembly_lines> / 8)) / 15)
+		N("SUM Equipment Pallets") +
+					
+			ROUNDUP(
+							N("Bin Kits = ((Assembly lines + (Backup_lines)) / Bins per pallet)") +
+							((<Assembly_lines> + ROUNDUP(<Assembly_lines> / 8)) / 15)
 
-						N("Command Station = (Blue & Green Bins / bins per pallet) + (Pink bin / bins per pallet)") +
-						(ROUNDUP(<Assembly_lines / 15) + (ROUNDUP(<Assembly_lines> / 600) / 15)) +
+							N("Command Station = (Blue & Green Bins / bins per pallet) + (Pink bin / bins per pallet)") +
+							(ROUNDUP(<Assembly_lines / 15) + (ROUNDUP(<Assembly_lines> / 600) / 15)) +
 
-						N("Sound System") + 
-						if(<sound_system> LIKE "Yes" , 2/15 , 0)
-						
-				)
-)
+							N("Sound System") + 
+							if(<sound_system> LIKE "Yes" , 2/15 , 0)
+							
+					)
+	)
 
+<!-- Outbound Final -->
+	<!-- Human Readable --> 
 	
+	<Outbound Initial>
+	IF - we can condense the final pallet onto the other pallets. ROUND DOWN pallet count
+	ELSE - ROUND UP pallet count 
 	
-	
+	<!-- Translated -->
+	=IF (<outbound initial> - ROUNDDOWN(<outbound initial>) < .34 , ROUNDDOWN<outbound initial> , ROUNDUP<outbound initial>)
 	
 
-<!-- Inbound -->
+
+---------------------------------------
+
+
+
+<!-- Inbound Initial -->
 
 	<!-- Human Readable -->
 	=ROUNDUP(<Outbound food pallets * .25> + <Equipment Pallets>)
@@ -99,3 +114,14 @@
 					)
 
 				)	
+
+	
+<!-- Inbound Final -->
+	<!-- Human Readable --> 
+	
+	<Inbound Initial>
+	IF - we can condense the final pallet onto the other pallets. ROUND DOWN pallet count
+	ELSE - ROUND UP pallet count 
+
+<!-- Translated -->
+=IF (<Inbound initial> - ROUNDDOWN(<Inbound initial>) < .34 , ROUNDDOWN<Inbound initial> , ROUNDUP<Inbound initial>)
