@@ -35,11 +35,14 @@
 	N("SUM Equipment Pallets") +
 				
 		ROUNDUP(
-					N("Bin Kits - # of bin kits + # of extra bin kits") +
-						([bin kits] + (ROUNDUP([bin kits] / 8)) / 15) +
+						N("Bin Kits = ((Assembly lines + (Backup_lines)) / Bins per pallet)") +
+						((<Assembly_lines> + ROUNDUP(<Assembly_lines> / 8)) / 15)
 
-					N("Command Stations - (Blue & Green bin + Pink bin)") +
-						(((ROUNDUP([Bin Kits] / 15) * 2) + 1) / 15) +
+						N("Command Station = (Blue & Green Bins / bins per pallet) + (Pink bin / bins per pallet)") +
+						(ROUNDUP(<Assembly_lines / 15) + (ROUNDUP(<Assembly_lines> / 600) / 15)) +
+
+						N("Sound System") + 
+						if(<sound_system> LIKE "Yes" , 2/15 , 0)
 						
 				)
 )
