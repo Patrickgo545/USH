@@ -1,0 +1,98 @@
+<!-- Pallet_count formula -->
+
+
+
+<!-- Outbound -->
+<!-- Human Readable -->
+= ROUNDUP(<Food Pallets>) + ROUNDUP(<Equipment Pallets>)
+
+<!-- Translated-->
+=N("Outbound pallet_count = SUM(Food Pallets) + SUM(Equipment pallets") +
+	 
+	N("SUM Food Pallets") +
+	
+		ROUNDUP(
+					n("Lentils = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.15) / 680) / 45) +
+
+					n("Rice = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.2) / 1295) / 45) +
+
+					n("Veggies = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.2) / 3900) / 40) +
+
+					n("Salt = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.2) / 29,934) / 45) +
+
+					n("Boxes = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.2) / 288) / 20) +
+
+					n("Bags = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+					(((<meal_count> * 1.2) / 9600) / 64) 
+				) +
+
+			
+	N("SUM Equipment Pallets") +
+				
+		ROUNDUP(
+					N("Bin Kits - # of bin kits + # of extra bin kits") +
+						([bin kits] + (ROUNDUP([bin kits] / 8)) / 15) +
+
+					N("Command Stations - (Blue & Green bin + Pink bin)") +
+						(((ROUNDUP([Bin Kits] / 15) * 2) + 1) / 15) +
+						
+				)
+)
+
+	
+	
+	
+	
+
+<!-- Inbound -->
+
+	<!-- Human Readable -->
+	=ROUNDUP(<Outbound food pallets * .25> + <Equipment Pallets>)
+
+	<!-- TRANSLATED -->
+	=ROUNDUP(
+				N("Food Pallet Labels * .25 // about 25% of food volume comes back") +
+					(
+						(
+							n("Lentils = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.15) / 680) / 45) +
+
+							n("Rice = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.2) / 1295) / 45) +
+
+							n("Veggies = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.2) / 3900) / 40) +
+
+							n("Salt = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.2) / 29,934) / 45) +
+
+							n("Boxes = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.2) / 288) / 20) +
+
+							n("Bags = ((Meal_count * Overage) / Meals_per_Carton) / Cartons_per_pallet") +
+							(((<meal_count> * 1.2) / 9600) / 64) 
+						) 
+						
+						* (.25)
+
+					) +
+
+				N("Equipment pallet volume") +
+					(
+						N("Bin Kits = ((Assembly lines + (Backup_lines)) / Bins per pallet)") +
+						((<Assembly_lines> + ROUNDUP(<Assembly_lines> / 8)) / 15)
+
+						N("Command Station = (Blue & Green Bins / bins per pallet) + (Pink bin / bins per pallet)") +
+						(ROUNDUP(<Assembly_lines / 15) + (ROUNDUP(<Assembly_lines> / 600) / 15)) +
+
+						N("Sound System") + 
+						if(<sound_system> LIKE "Yes" , 2/15 , 0)
+							
+					)
+
+				)	
