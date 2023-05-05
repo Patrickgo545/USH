@@ -1,0 +1,44 @@
+--Select Statement
+    SELECT 
+    [first_name]
+        ,[last_name]
+        ,[address_1]
+        ,[phone]
+        , email  
+    FROM [FCE].[dbo].[Applicant]
+
+
+ --ADD MASK TO EMAIL
+    ALTER TABLE [FCE].[dbo].[Applicant] 
+    ALTER COLUMN [email] ADD MASKED WITH (FUNCTION = 'email()') 
+
+
+ --ADD MASK TO PHONE #
+    ALTER TABLE [FCE].[dbo].[Applicant]
+    ALTER COLUMN [phone] ADD MASKED WITH (FUNCTION = 'partial(0,"XXXXXXX",4)') 
+
+
+ --VIEW ACTIVE MASKS
+	SELECT c.name, t.name AS table_name, c.is_masked, c.masking_function
+	FROM sys.masked_columns AS c
+	JOIN sys.tables AS t
+		ON c.[object_id] = t.[object_id]
+	WHERE is_masked = 1;
+
+
+--View mask as [testuser]
+	CREATE USER [TestUser] WITHOUT LOGIN;
+
+	GRANT SELECT ON [FCE].[dbo].[Applicant] TO [TestUser];
+
+	EXECUTE AS USER = 'testuser';
+
+	SELECT 
+		 [first_name]
+		  ,[last_name]
+		  ,[address_1]
+		  ,[phone]
+		  , email  
+		  FROM [FCE].[dbo].[Applicant];
+
+	REVERT;
