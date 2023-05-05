@@ -1,0 +1,153 @@
+<!-- OUTBOUND -->
+    
+    <!-- HUMAN READABLE -->
+    
+        = SUM ( 
+            Food -
+            SUM(
+                Lentils -         
+                <Lentil Units> * <weight / Unit>
+                (ROUNDUP(<Meal_Count> / <Meals per unit) * <overage>)
+
+                Rice -
+                <Rice Units> * <weight / unit>
+
+                Salt - 
+                <Salt Units> * <weight / unit>
+
+                Veggies -
+                <Veg Units> * <weight / unit>
+
+                Bags - 
+                <Bag Units> * <weight / unit>
+
+                Boxes - 
+                <Box Units> * <weight / unit>
+            )
+            
+            + Equipment 
+            SUM(
+                Bin Kits -
+                <Bin Kits> * <weight / unit>
+
+                Command Stations - 
+                <command stations> * <weight / unit>
+            )
+
+
+            + Pallet Weight
+            SUM(
+                shipment volume * weight / pallet 
+            )
+        )
+
+
+    <!-- TRANSLATED -->
+        
+        =SUM (
+
+            n("Food Outbound") +
+            SUM(
+                n("Lentils") +
+                ((ROUNDUP(<Meal_Count> / <lentil_mpu>) * <lentil_overage>) * <item_weight>) +
+
+                n("Rice")
+                ((ROUNDUP(<Meal_Count / <rice_mpu>) * <rice_overage>) * <item_weight>)
+
+                n("Salt")
+                ((ROUNDUP(<Meal_Count> / <salt_mpu>) * <salt_overage>) * <item_weight>)
+
+                n("Veggies")
+                ((ROUNDUP(<Meal_Count> / <Veggie_mpu>) * <veggie_overage>) * <item_weight>)
+
+                n("Bags")
+                ((ROUNDUP(<Meal_Count> / <bag_mpu>) * <bag_overage>) * <item_weight>)
+
+                n("Boxes")
+                ((ROUNDUP(<Meal_Count> / <box_mpu>) * box_overage>) * <item_weight>)
+            ) +
+
+            n("Equipment") +
+            SUM(
+                n("Bin Kits") +
+                ((<bin_kits> + (ROUNDUP(<bin_kits> / 8))) * <item_weight>) + 
+
+                n("Command Station") +
+                (ROUNDUP(<bin_kits> / 15)) +
+
+            ) +
+
+            n("Pallet Weight") +
+                SUM(
+                    <inbound_shipment_volume> * <pallet_weight> 
+                )
+
+        )
+
+
+
+<!-- INBOUND -->
+
+    <!-- HUMAN READABLE -->
+
+        =SUM(
+            Food -
+            <Outbound food sum> * .25
+
+            + Equipment
+            SUM(
+                Bin Kits -
+                <Bin Kits> * <weight / unit>
+
+                Command Stations - 
+                <command stations> * <weight / unit>
+            )
+
+            + Pallet Weight
+            SUM(
+                shipment volume * weight / pallet 
+            )
+        )
+
+
+    <!-- TRANSLATED -->
+
+        =SUM(
+            
+            n("Food") +
+                (SUM(
+                    n("Lentils") +
+                    ((ROUNDUP(<Meal_Count> / <lentil_mpu>) * <lentil_overage>) * <item_weight>) +
+
+                    n("Rice")
+                    ((ROUNDUP(<Meal_Count / <rice_mpu>) * <rice_overage>) * <item_weight>)
+
+                    n("Salt")
+                    ((ROUNDUP(<Meal_Count> / <salt_mpu>) * <salt_overage>) * <item_weight>)
+
+                    n("Veggies")
+                    ((ROUNDUP(<Meal_Count> / <Veggie_mpu>) * <veggie_overage>) * <item_weight>)
+
+                    n("Bags")
+                    ((ROUNDUP(<Meal_Count> / <bag_mpu>) * <bag_overage>) * <item_weight>)
+
+                    n("Boxes")
+                    ((ROUNDUP(<Meal_Count> / <box_mpu>) * box_overage>) * <item_weight>)
+                ) * .25 ) +
+
+            n("Equipment") +
+                SUM(
+                    n("Bin Kits") +
+                    ((<bin_kits> + (ROUNDUP(<bin_kits> / 8))) * <item_weight>) + 
+
+                    n("Command Station") +
+                    (ROUNDUP(<bin_kits> / 15))
+                    
+                    ) +
+
+            n("Pallet Weight") +
+                SUM(
+                    <inbound_shipment_volume> * <pallet_weight> 
+                )
+
+        )
