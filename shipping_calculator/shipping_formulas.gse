@@ -1,0 +1,30 @@
+// LTL 
+
+    // HUMAN READABLE
+        
+    // DISTANCE
+    =(((<ltl_distance_slope> * <distance>) * <shipment_volume>) + <ltl_y-int>)
+
+
+// FTL
+
+    //HUMAN READABLE 
+
+    // VOLUME | DISTANCE
+    =(      
+        (<ftl_volume_slope> * <multiplier>) / 2 +       // Volume
+        ((<ftl_distance_slope) * <multiplier> / 2)      // Distance
+    )
+
+
+// DEDICATED TRUCK
+
+    // HUMAN READABLE
+
+    // DISTANCE | WEIGHT | VOLUME
+    =(
+        ((<ded_distance_slope> * <distance>) * <multiplier>) / 3    // Distance
+        ((<ded_weight_slope> * <weight>) * <multiplier>) / 3        // Weight
+        ((<ded_volume_slope> * <volume>) * <multiplier>) / 3        // Volume
+
+    )
