@@ -43,3 +43,32 @@ test_palindrome = is_palindrome(word)
 print('Palindrome: ' , test_palindrome)
 
 
+
+'''
+Write a function called calculate_factorial that takes an integer as a parameter and returns the factorial of that number. 
+The factorial of a non-negative integer n is the product of all positive integers less than or equal to n. For example, 
+the factorial of 5 (denoted as 5!) is 5 x 4 x 3 x 2 x 1, which equals 120.'''
+
+# 3. CALCULATE FACTORIAL
+
+number = 5
+
+def calculate_factorial(x):
+    factorial = x
+    i = x
+    while i > 1:
+        factorial *= (i - 1)
+        i -= 1
+        return factorial
+    
+result = calculate_factorial(number)
+print(result)
+
+
+
+'''
+Write a function called count_vowels that takes a string as a parameter and returns the count of vowels (a, e, i, o, u) in that string. 
+The function should be case-insensitive, meaning it should count both uppercase and lowercase vowels.'''
+
+def count_vowels():
+    no
