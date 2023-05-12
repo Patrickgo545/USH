@@ -30,7 +30,7 @@ and backwards, ignoring spaces and punctuation. The function should ignore case 
 
 # 2. CHECK PALINDROME
 
-word = 'radar'
+word = input('Enter a word & i\'\ll check if its a palindrome: ')
 
 def is_palindrome(word):
     if word == word[::-1]:
@@ -40,6 +40,6 @@ def is_palindrome(word):
         return False
 
 test_palindrome = is_palindrome(word)
-print(test_palindrome)
+print('Palindrome: ' , test_palindrome)
 
 
