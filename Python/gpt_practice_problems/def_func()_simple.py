@@ -75,3 +75,31 @@ numbers = [1,2,3,4,5]
 
 result = calculate_sum(numbers)
 print(result)
+
+
+
+# 5. Palindrome Test Check
+
+def palindrome_check(word):
+    reversed_word = word[::-1]
+    if word == reversed_word:
+        return True
+    else:
+        return False
+
+palindrome_test = input('Enter a palindrome: ')
+print(palindrome_check(palindrome_test))
+
+
+
+# 6. COUNT VOWELS
+
+def count_vowels(phrase):
+    count = 0
+    vowels = "aeiouAEIOU"
+
+    for char in phrase:
+        if char in vowels:
+            count += 1
+
+    return count
