@@ -13,20 +13,20 @@
         <shipment_quote_actual> | <cost_per_pallet>)
 
 
-        <shipment_method>           EX (Outbound) || FG (Inbound)
+        <shipment_method>           EY (Outbound) || FH (Inbound)
         <Datasheet>                 HPs!A$3:GN
         <Agreement_#>               A
         <project_name>              Q 
         <date>                      Y
-        <total_miles_one_way>       ER
-        <shipment_volume>           EU (Outbound) || FD (Inbound)
-        <shipment_quote_actual>     EZ (Outbound) || FH (Inbound)
+        <total_miles_one_way>       ES
+        <shipment_volume>           EV (Outbound) || FE (Inbound)
+        <shipment_quote_actual>     EZ (Outbound) || FI (Inbound)
         <cost_per_pallet>           N/A 
 
 // TRANSLATED
 
     // OUTBOUND
-    =QUERY(HPs!A$3:GN , "SELECT A , Q , Y , ER , EU , EZ  WHERE EX = 'LTL'" , 0)
+    =QUERY(HPs!A$3:GN , "SELECT A , Q , Y , ES , EV , EZ  WHERE EY = 'LTL'" , 0)
 
     //INBOUND
-    =QUERY(HPs!A$3:GN , "SELECT A , Q , Y , ER , FD , FH WHERE FG = 'LTL'" , 0)
+    =QUERY(HPs!A$3:GN , "SELECT A , Q , Y , ES , FE , FI WHERE FH = 'LTL'" , 0)
