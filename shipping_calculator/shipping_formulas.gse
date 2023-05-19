@@ -1,9 +1,21 @@
 // LTL 
 
     // HUMAN READABLE
-        
+    <ltl_distance_slope>        'Shipping Calc - Summary'!$G$4
+    <ltl_yint>                  'Shipping Calc - Summary'!$H$4
+
+    <distance>                  D (Outbound) || M (Inbound)
+    <shipment_volume>           E (Outbound) || N (Inbound)
+
     // DISTANCE
-    =(((<ltl_distance_slope> * <distance>) * <shipment_volume>) + <ltl_y-int>)
+    =(((<ltl_distance_slope> * <distance>) * <shipment_volume>) + <ltl_yint>)
+
+    // QUERY LTL - SHIPMENT QUOTE - DYNAMIC ANTICIPATED
+        // OUTBOUND
+        =((('Shipping Calc - Summary'!$G$4 * $D3) * $E3) + 'Shipping Calc - Summary'!$H$4)
+
+        // INBOUND
+        =((('Shipping Calc - Summary'!$G$4 * $M3) * $N3) + 'Shipping Calc - Summary'!$H$4)
 
 
 // FTL
