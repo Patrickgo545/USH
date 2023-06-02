@@ -1,0 +1,71 @@
+// LTL - COST PER PALLET / DISTANCE
+
+    // OUTBOUND
+
+        // HUMAN READABLE
+
+        FILTER(range , condition) - filter Function
+        LINEST(y , x) - Function to find the trendline value of an x , y dataset 
+
+        outbound - cost_per_pallet      'Query - LTL'!G3:G
+        outbound - distance_one_way     'Query - LTL'!D3:D
+
+        trendline(filter(cost_per_pallet , not_blank(cost_per_pallet)) , filter(distance_one_way , not_blank(cost_per_pallet)))
+
+        // TRANSLATED
+
+        =LINEST(FILTER('Query - LTL'!G3:G, NOT(ISBLANK('Query - LTL'!G3:G))),FILTER('Query - LTL'!D3:D, NOT(ISBLANK('Query - LTL'!G3:G)))) 
+        
+    // INBOUND
+
+        // HUMAN READABLE
+
+        LINEST(y , x) - Function to find the trendline value of an x , y dataset 
+
+        cost_per_pallet     'Query - LTL'!P3:P170
+        distance_one_way    'Query - LTL'!M3:M170
+
+        trendline(filter(cost_per_pallet , not_blank) , filter(distance_one_way , not_blank))
+
+        // TRANSLATED
+
+        =LINEST(FILTER('Query - LTL'!P3:P, NOT(ISBLANK('Query - LTL'!P3:P))),FILTER('Query - LTL'!M3:M, NOT(ISBLANK('Query - LTL'!P3:P))))
+    
+    // % OF ENTRIES ABOVE NEGATIVE YIELD 
+        // OUTBOUND
+        quote anticipated       'Query - LTL'!H3:H
+        quote actual            'Query - LTL'!F3:F
+
+        //INBOUND
+        quote anticipated       'Query - LTL'!Q3:Q 
+        quote actual            'Query - LTL'!O3:O 
+
+        // OUTBOUND
+        =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!H3:H, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))), ">"&FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))/COUNTA(FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F)))))))
+        // INBOUND
+        +
+        =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!Q3:Q, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))), ">"&FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))/COUNTA(FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O)))))))
+
+
+    // AVERAGE INACCURACY
+
+        // OUTBOUND
+        =(AVERAGE(ARRAYFORMULA(FILTER(('Query - LTL'!H3:H - 'Query - LTL'!F3:F) / 'Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))))
+       
+       // INBOUND
+        =(AVERAGE(ARRAYFORMULA(FILTER(('Query - LTL'!Q3:Q - 'Query - LTL'!O3:O) / 'Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))))
+    // ACTUAL PRICE PAID
+
+        =SUM('Query - LTL'!F3:F) + SUM('Query - LTL'!O3:O)
+
+    // PREDICTED PRICE PAID
+
+        = SUM('Query - LTL'!H3:H) + SUM('Query - LTL'!Q3:Q)
+
+    // AVERAGE PRICE DIFFERENCE
+
+        =(ARRAYFORMULA(AVERAGE('Query - LTL'!F3:F - 'Query - LTL'!H3:H))) +         //Outbound
+        (ARRAYFORMULA(AVERAGE('Query - LTL'!P3:P - 'Query - LTL'!Q3:Q)))            //Inbound
+
+
+
