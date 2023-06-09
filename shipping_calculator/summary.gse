@@ -40,12 +40,13 @@
         quote anticipated       'Query - LTL'!Q3:Q 
         quote actual            'Query - LTL'!O3:O 
 
-        // OUTBOUND
-        =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!H3:H, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))), ">"&FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))/COUNTA(FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F)))))))
-        // INBOUND
-        +
-        =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!Q3:Q, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))), ">"&FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))/COUNTA(FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O)))))))
-
+                    // OUTBOUND
+        =AVERAGE(
+                    (AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!H3:H, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))), ">"&FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))/COUNTA(FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F)))))))
+                    // INBOUND
+                    ,
+                    =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!Q3:Q, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))), ">"&FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))/COUNTA(FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O)))))))
+        )
 
     // AVERAGE INACCURACY
 
@@ -64,8 +65,10 @@
 
     // AVERAGE PRICE DIFFERENCE
 
-        =(ARRAYFORMULA(AVERAGE('Query - LTL'!F3:F - 'Query - LTL'!H3:H))) +         //Outbound
-        (ARRAYFORMULA(AVERAGE('Query - LTL'!P3:P - 'Query - LTL'!Q3:Q)))            //Inbound
+        =AVERAGE(
+                (ARRAYFORMULA(AVERAGE('Query - LTL'!H3:H - 'Query - LTL'!F3:F))) ,         //Outbound
+                (ARRAYFORMULA(AVERAGE('Query - LTL'!Q3:Q - 'Query - LTL'!O3:O)))            //Inbound
+        )
 
 
 
