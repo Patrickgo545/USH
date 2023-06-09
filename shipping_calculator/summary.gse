@@ -40,21 +40,27 @@
         quote anticipated       'Query - LTL'!Q3:Q 
         quote actual            'Query - LTL'!O3:O 
 
-                    // OUTBOUND
-        =AVERAGE(
-                    (AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!H3:H, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))), ">"&FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))/COUNTA(FILTER('Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F)))))))
-                    // INBOUND
-                    ,
-                    =(AVERAGE(ARRAYFORMULA(COUNTIF(FILTER('Query - LTL'!Q3:Q, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))), ">"&FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))/COUNTA(FILTER('Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O)))))))
-        )
+        // HUMAN READABLE
+            =ARRAYFORMULA(SUM(IF(quote_anticipated > quote_actual, 1, 0)) / num_of_quotes)
+
+        //TRANSLATED
+            =AVERAGE(
+                // Oubbound
+                ARRAYFORMULA(SUM(IF('Query - LTL'!H3:H > 'Query - LTL'!F3:F , 1 , 0)) / COUNTA('Query - LTL'!H3:H))
+                ,
+                //Inbound
+                ARRAYFORMULA(SUM(IF('Query - LTL'!Q3:Q > 'Query - LTL'!O3:O , 1 , 0)) / COUNTA('Query - LTL'!Q3:Q))
+                )
 
     // AVERAGE INACCURACY
-
+        
         // OUTBOUND
         =(AVERAGE(ARRAYFORMULA(FILTER(('Query - LTL'!H3:H - 'Query - LTL'!F3:F) / 'Query - LTL'!F3:F, NOT(ISBLANK('Query - LTL'!H3:H)), NOT(ISBLANK('Query - LTL'!F3:F))))))
        
        // INBOUND
         =(AVERAGE(ARRAYFORMULA(FILTER(('Query - LTL'!Q3:Q - 'Query - LTL'!O3:O) / 'Query - LTL'!O3:O, NOT(ISBLANK('Query - LTL'!Q3:Q)), NOT(ISBLANK('Query - LTL'!O3:O))))))
+        
+
     // ACTUAL PRICE PAID
 
         =SUM('Query - LTL'!F3:F) + SUM('Query - LTL'!O3:O)
@@ -65,9 +71,18 @@
 
     // AVERAGE PRICE DIFFERENCE
 
-        =AVERAGE(
-                (ARRAYFORMULA(AVERAGE('Query - LTL'!H3:H - 'Query - LTL'!F3:F))) ,         //Outbound
-                (ARRAYFORMULA(AVERAGE('Query - LTL'!Q3:Q - 'Query - LTL'!O3:O)))            //Inbound
+        // HUMAN READABLE
+        = Average(
+            (Anticipated - Actual)
+        )
+
+        // TRANSLATED 
+        = AVERAGE(
+            // Outbound
+            ARRAYFORMULA(IF(ISNUMBER('Query - LTL'!H3:H) * ISNUMBER('Query - LTL'!F3:F), 'Query - LTL'!H3:H - 'Query - LTL'!F3:F, ""))
+            ,
+            // INBOUND
+            ARRAYFORMULA(IF(ISNUMBER('Query - LTL'!Q3:Q) * ISNUMBER('Query - LTL'!O3:O), 'Query - LTL'!Q3:Q - 'Query - LTL'!O3:O, ""))
         )
 
 
