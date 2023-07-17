@@ -1,0 +1,61 @@
+// Old formula
+    =if(((E44 + E43
+    )>6), (($B$16)+2), 0)
+
+    /*  if
+            # of lentils & rice > 6
+            Send Black pallets = # of lines + 2
+
+        else
+            Send 0
+    */
+
+// New formula (Proposed)
+
+    =IFS(
+        // If sprinter van
+            // Black pallets = 0
+        AND(REGEXMATCH(B8, ".*FL.*") , B15 <= 15000) = TRUE , 0 , 
+
+        // Original
+        ((E44 + E43
+        ) > 6) , (($B$16) + 2) , 
+
+        // if lentil & rice < 4 - No black Pallets
+        (ROUNDUP(E44 + E43
+        ) <= 4) , 0 , 
+
+        // if (lentil & rice < 6) AND (# of lines >= 15) 
+            // Black Pallets = (# of lines) / 2
+        (AND(((E44 + E43
+        ) <= 6) , ($B$16 >= 15))) , 
+        ROUNDUP($B$16 / 2) ,
+        
+        // No conditions met
+        0
+    )
+
+// With annotative comments
+
+    =IFS(1 = 0 , 0  
+
+        + N("If sprinter van // Black pallets = 0") ,
+            AND(REGEXMATCH(B8, ".*FL.*") , B15 <= 15000) = TRUE , 0  
+
+        + N("Original Formula") ,
+            ((E44 + E43
+            ) > 6) , (($B$16) + 2)  
+
+        + N("if lentil & rice < 4 // Black Pallets = 0") ,
+            (ROUNDUP(E44 + E43
+            ) <= 4) , 0  
+
+        + N("if (lentil & rice <= 6) AND (# of lines >= 15)")
+        + N("Black Pallets = (# of lines) / 2") ,
+            (AND(((E44 + E43
+            ) <= 6) , ($B$16 >= 15))) , 
+            ROUNDUP($B$16 / 2) 
+        
+        + N("No conditions met") ,
+            1 = 1 , 0
+    )
