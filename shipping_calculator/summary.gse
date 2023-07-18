@@ -85,5 +85,12 @@
             ARRAYFORMULA(IF(ISNUMBER('Query - LTL'!Q3:Q) * ISNUMBER('Query - LTL'!O3:O), 'Query - LTL'!Q3:Q - 'Query - LTL'!O3:O, ""))
         )
 
+// LTL LINE CHART   
+
+    Shipment Quote - Dynamic    =   'Query - LTL'!F2:F
+    Shipment Quote - Actual     =   'Query - LTL'!H2:H
+
+    // Merge data values from Outbound & Inbound (Not yet correct)     
+    =FLATTEN(ARRAYFORMULA(FILTER({'Query - LTL'!F2:F, 'Query - LTL'!H2:H}, NOT(ISBLANK('Query - LTL'!F2:F)), NOT(ISBLANK('Query - LTL'!H2:H)))))
 
 
