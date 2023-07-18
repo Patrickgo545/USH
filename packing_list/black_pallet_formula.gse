@@ -1,6 +1,5 @@
 // Old formula
-    =if(((E44 + E43
-    )>6), (($B$16)+2), 0)
+    =if(((E44 + E43)>6), (($B$16)+2), 0)
 
     /*  if
             # of lentils & rice > 6
