@@ -24,8 +24,8 @@
 
     // VOLUME | DISTANCE
     =(      
-        (<ftl_volume_slope> * <multiplier>) / 2 +       // Volume
-        ((<ftl_distance_slope) * <multiplier> / 2)      // Distance
+         (<ftl_volume_slope> * <variable_weight>) / 2 +       // Volume
+         ((<ftl_distance_slope) * <variable_weight> / 2)      // Distance
     )
 
 
@@ -35,8 +35,8 @@
 
     // DISTANCE | WEIGHT | VOLUME
     =(
-        ((<ded_distance_slope> * <distance>) * <multiplier>) / 3    // Distance
-        ((<ded_weight_slope> * <weight>) * <multiplier>) / 3        // Weight
-        ((<ded_volume_slope> * <volume>) * <multiplier>) / 3        // Volume
+        ((<ded_distance_slope> * <distance>) * <variable_weight>) / 3 +         // Distance
+        ((<ded_weight_slope> * <shipment_weight>) * <variable_weight>) / 3 +    // Weight
+        ((<ded_volume_slope> * <volume>) * <variable_weight>) / 3               // Volume
 
     )
