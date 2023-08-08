@@ -1,0 +1,39 @@
+// IMPORT LIVE FORMULA
+    // SLOPE
+    =IMPORTRANGE("https://docs.google.com/spreadsheets/d/102SNmpUzJ0AInSQ-jDITIQ47_5UoZ675FqFrs4eRd98/edit?usp=sharing", "Shipping Calc - Summary"!G5)
+
+    // Y - INT
+    =IMPORTRANGE("https://docs.google.com/spreadsheets/d/102SNmpUzJ0AInSQ-jDITIQ47_5UoZ675FqFrs4eRd98/edit?usp=sharing", "Shipping Calc - Summary"!H5)
+
+
+// EDIT LIVE FORMULA
+    
+    // CURRENT OUTBOUND
+    =IFS(F5 >=1 , (((5.1 * F2) * 12.961) / 2 + ((1.8 * F4) * 2.219) / 2) , F5 = 0 , //FTL
+
+    IFS( F4 <= 100 , (((1.7 * F4) * 5.779) / 3 + ((0.00981 * F7) * 5.684) / 3 + ((20.5 * F2) * 3.645) / 3) + 100 , //DEDICATED
+
+    F4 > 100 , ((0.114 * F4 + 105) * F2) + 150)) //LTL
+
+    // OUTBOUND UPDATED
+    =IFS(F5 >=1 , (((5.1 * F2) * 12.961) / 2 + ((1.8 * F4) * 2.219) / 2) , F5 = 0 , 
+
+    IFS( F4 <= 100 , (((1.7 * F4) * 5.779) / 3 + ((0.00981 * F7) * 5.684) / 3 + ((20.5 * F2) * 3.645) / 3) + 100 ,
+
+    F4 > 100 , (LTL_DISTANCE_SLOPE * F4 + LTL_Y_INT) * F2))
+
+
+    // CURRENT INBOUND
+    =IFS(F6>=1 , (((5.1 * F3) * 12.961) / 2 + ((1.58 * F4) * 2.219) / 2) * F6 , F6 = 0 , 
+    
+    IFS(F4 <= 100 , (((1.7 * F4) * 5.779) / 3 + ((0.00981 * F8) * 5.684) / 3 + ((20.5 * F3) * 3.645) / 3) + 100 , 
+    
+    F4 > 100 , ((0.114 * F4 + 105) * F3) + 150))
+
+
+    // INBOUND UPDATED
+    =IFS(F6>=1 , (((5.1 * F3) * 12.961) / 2 + ((1.58 * F4) * 2.219) / 2) * F6 , F6 = 0 , 
+    
+    IFS(F4 <= 100 , (((1.7 * F4) * 5.779) / 3 + ((0.00981 * F8) * 5.684) / 3 + ((20.5 * F3) * 3.645) / 3) + 100 , 
+    
+    F4 > 100 , (LTL_DISTANCE_SLOPE * F4 + LTL_Y_INT) * F3))
