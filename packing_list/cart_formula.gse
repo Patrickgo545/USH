@@ -1,0 +1,27 @@
+=IFS(0 = 1 , NULL
+
+    +N("Sprinter Van Projects - 2 Carts"),
+    AND(REGEXMATCH(B8 , "FL") , B15 <= 15000) , 2
+
+
+    +N("Projects >= 50k  
+        1 Cart per 15 Assembly lines
+        +
+        1 Cart per 100k Meals"),
+
+    B15 >= 50000 , 
+    ROUNDUP($B$16 / 15) +
+    Roundup(B15 / 100000)
+
+
+
+    +N("All other HP's - Outbound Pallet count 
+        IF <= 3 
+            1 Cart
+        
+        ELSE -
+            2 Carts"),
+
+    1 = 1, 
+    IF(B36 <= 3 , 1 , 2)
+    )
