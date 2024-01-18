@@ -1,0 +1,15 @@
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\bin\Debug\net8.0\02_variables.exe
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\bin\Debug\net8.0\02_variables.deps.json
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\bin\Debug\net8.0\02_variables.runtimeconfig.json
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\bin\Debug\net8.0\02_variables.dll
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\bin\Debug\net8.0\02_variables.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.AssemblyInfoInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.AssemblyInfo.cs
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.csproj.CoreCompileInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.sourcelink.json
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.dll
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\refint\02_variables.dll
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\02_variables.genruntimeconfig.cache
+C:\Users\patri\Documents\USH\c#_tutorial\02_variables\obj\Debug\net8.0\ref\02_variables.dll

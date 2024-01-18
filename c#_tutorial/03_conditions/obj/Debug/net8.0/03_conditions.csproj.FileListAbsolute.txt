@@ -1,0 +1,15 @@
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\bin\Debug\net8.0\03_conditions.exe
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\bin\Debug\net8.0\03_conditions.deps.json
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\bin\Debug\net8.0\03_conditions.runtimeconfig.json
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\bin\Debug\net8.0\03_conditions.dll
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\bin\Debug\net8.0\03_conditions.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.AssemblyInfoInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.AssemblyInfo.cs
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.csproj.CoreCompileInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.sourcelink.json
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.dll
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\refint\03_conditions.dll
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\03_conditions.genruntimeconfig.cache
+C:\Users\patri\Documents\USH\c#_tutorial\03_conditions\obj\Debug\net8.0\ref\03_conditions.dll

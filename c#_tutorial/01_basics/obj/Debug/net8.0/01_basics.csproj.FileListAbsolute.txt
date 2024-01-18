@@ -1,0 +1,15 @@
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\bin\Debug\net8.0\01_basics.exe
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\bin\Debug\net8.0\01_basics.deps.json
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\bin\Debug\net8.0\01_basics.runtimeconfig.json
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\bin\Debug\net8.0\01_basics.dll
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\bin\Debug\net8.0\01_basics.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.AssemblyInfoInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.AssemblyInfo.cs
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.csproj.CoreCompileInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.sourcelink.json
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.dll
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\refint\01_basics.dll
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\01_basics.genruntimeconfig.cache
+C:\Users\patri\Documents\USH\c#_tutorial\01_basics\obj\Debug\net8.0\ref\01_basics.dll
