@@ -1,0 +1,14 @@
+C:\USH\c#_tutorial\03_conditions\bin\Debug\net7.0\03_conditions.exe
+C:\USH\c#_tutorial\03_conditions\bin\Debug\net7.0\03_conditions.deps.json
+C:\USH\c#_tutorial\03_conditions\bin\Debug\net7.0\03_conditions.runtimeconfig.json
+C:\USH\c#_tutorial\03_conditions\bin\Debug\net7.0\03_conditions.dll
+C:\USH\c#_tutorial\03_conditions\bin\Debug\net7.0\03_conditions.pdb
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.GeneratedMSBuildEditorConfig.editorconfig
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.AssemblyInfoInputs.cache
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.AssemblyInfo.cs
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.csproj.CoreCompileInputs.cache
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.dll
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\refint\03_conditions.dll
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.pdb
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\03_conditions.genruntimeconfig.cache
+C:\USH\c#_tutorial\03_conditions\obj\Debug\net7.0\ref\03_conditions.dll
