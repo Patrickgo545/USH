@@ -1,0 +1,14 @@
+C:\USH\c#_tutorial\04_loops\bin\Debug\net7.0\04_loops.exe
+C:\USH\c#_tutorial\04_loops\bin\Debug\net7.0\04_loops.deps.json
+C:\USH\c#_tutorial\04_loops\bin\Debug\net7.0\04_loops.runtimeconfig.json
+C:\USH\c#_tutorial\04_loops\bin\Debug\net7.0\04_loops.dll
+C:\USH\c#_tutorial\04_loops\bin\Debug\net7.0\04_loops.pdb
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.GeneratedMSBuildEditorConfig.editorconfig
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.AssemblyInfoInputs.cache
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.AssemblyInfo.cs
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.csproj.CoreCompileInputs.cache
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.dll
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\refint\04_loops.dll
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.pdb
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\04_loops.genruntimeconfig.cache
+C:\USH\c#_tutorial\04_loops\obj\Debug\net7.0\ref\04_loops.dll
