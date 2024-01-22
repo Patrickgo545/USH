@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "zEYUSacQ/xFbZYLKcW53uRp5LxTq9QhOD3NeEMJetvm7F3Xa8zRByzdCGV/REajB+nFZsxpxu6/+3MtoTn1f6A==",
+  "dgSpecHash": "ybea8aibLrgQt0pGbWZEWKKsVP2uGLxQbayEox1Bv7IGmeDc4tdRuGMYdm/MSSNl0InHYvla+xabWp2CCEVoZg==",
   "success": true,
-  "projectFilePath": "C:\\USH\\c#_tutorial\\05_arrays\\05_arrays.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\patri\\Documents\\USH\\c#_tutorial\\05_arrays\\05_arrays.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

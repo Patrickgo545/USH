@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lTXudgR/1i/u7ifxLLTqCTYHgAsgB19vNfHsTDPq9OcVC0OOVmCerZAP26DzK1xRgZWlUAM/iOF/Rlg0FE8cSA==",
+  "dgSpecHash": "8K4r3tDb7aqAAwHtFjqOnOLv9uEaRwu5qYKZ/E7RDvYjx4mxMz2Hd85pO//LmQeB3rODDkAyVfOPE1iyudKG/w==",
   "success": true,
-  "projectFilePath": "C:\\USH\\c#_tutorial\\03_conditions\\03_conditions.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\patri\\Documents\\USH\\c#_tutorial\\03_conditions\\03_conditions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\patri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }
