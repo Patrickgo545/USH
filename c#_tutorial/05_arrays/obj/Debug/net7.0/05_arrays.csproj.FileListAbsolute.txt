@@ -1,0 +1,14 @@
+C:\USH\c#_tutorial\05_arrays\bin\Debug\net7.0\05_arrays.exe
+C:\USH\c#_tutorial\05_arrays\bin\Debug\net7.0\05_arrays.deps.json
+C:\USH\c#_tutorial\05_arrays\bin\Debug\net7.0\05_arrays.runtimeconfig.json
+C:\USH\c#_tutorial\05_arrays\bin\Debug\net7.0\05_arrays.dll
+C:\USH\c#_tutorial\05_arrays\bin\Debug\net7.0\05_arrays.pdb
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.GeneratedMSBuildEditorConfig.editorconfig
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.AssemblyInfoInputs.cache
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.AssemblyInfo.cs
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.csproj.CoreCompileInputs.cache
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.dll
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\refint\05_arrays.dll
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.pdb
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\05_arrays.genruntimeconfig.cache
+C:\USH\c#_tutorial\05_arrays\obj\Debug\net7.0\ref\05_arrays.dll
