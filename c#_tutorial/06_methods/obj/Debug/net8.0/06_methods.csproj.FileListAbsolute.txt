@@ -1,0 +1,15 @@
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\bin\Debug\net8.0\06_methods.exe
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\bin\Debug\net8.0\06_methods.deps.json
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\bin\Debug\net8.0\06_methods.runtimeconfig.json
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\bin\Debug\net8.0\06_methods.dll
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\bin\Debug\net8.0\06_methods.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.AssemblyInfoInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.AssemblyInfo.cs
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.csproj.CoreCompileInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.sourcelink.json
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.dll
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\refint\06_methods.dll
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\06_methods.genruntimeconfig.cache
+C:\Users\patri\Documents\USH\c#_tutorial\06_methods\obj\Debug\net8.0\ref\06_methods.dll
