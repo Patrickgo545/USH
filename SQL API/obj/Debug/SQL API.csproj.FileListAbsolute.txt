@@ -83,3 +83,92 @@ C:\Users\patri\source\repos\SQL API\obj\Debug\SQL API.csproj.CoreCompileInputs.c
 C:\Users\patri\source\repos\SQL API\obj\Debug\SQL API.csproj.CopyComplete
 C:\Users\patri\source\repos\SQL API\obj\Debug\SQL API.exe
 C:\Users\patri\source\repos\SQL API\obj\Debug\SQL API.pdb
+C:\Users\harbinger\USH\SQL API\bin\Debug\SQL API.exe.config
+C:\Users\harbinger\USH\SQL API\bin\Debug\SQL API.exe
+C:\Users\harbinger\USH\SQL API\bin\Debug\SQL API.pdb
+C:\Users\harbinger\USH\SQL API\bin\Debug\Azure.Core.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Azure.Identity.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\CsvHelper.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\MimeKit.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Buffers.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Formats.Asn1.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Memory.Data.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Memory.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.AccessControl.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Permissions.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Text.Json.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.ValueTuple.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\Azure.Core.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Azure.Identity.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\CsvHelper.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Data.SqlClient.pdb
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\MimeKit.pdb
+C:\Users\harbinger\USH\SQL API\bin\Debug\MimeKit.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\MimeKit.dll.config
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Buffers.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Formats.Asn1.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Memory.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Memory.Data.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.AccessControl.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Permissions.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Text.Json.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\System.ValueTuple.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.csproj.AssemblyReference.cache
+C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.csproj.CoreCompileInputs.cache
+C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.csproj.CopyComplete
+C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.exe
+C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.pdb

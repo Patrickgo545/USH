@@ -11,6 +11,7 @@ namespace Reading_HTML
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             // Replace "example.csv" with the actual CSV file path
@@ -21,8 +22,9 @@ namespace Reading_HTML
                 do
                 {
                     var line = reader.ReadLine();
+                    var values = line.Split(',');
 
-                    Console.WriteLine(line);
+                    Console.WriteLine($"Date: {values[0]}, Cost: {values[1]}");
                 } while (reader.EndOfStream == false);
 
 
