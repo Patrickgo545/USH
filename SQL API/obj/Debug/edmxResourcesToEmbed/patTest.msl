@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="testDatabaseModelStoreContainer" CdmEntityContainer="testDatabaseEntities">
+    <EntitySetMapping Name="testTable">
+      <EntityTypeMapping TypeName="testDatabaseModel.testTable">
+        <MappingFragment StoreEntitySet="testTable">
+          <ScalarProperty Name="avg_gas_price" ColumnName="avg_gas_price" />
+          <ScalarProperty Name="dates" ColumnName="dates" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

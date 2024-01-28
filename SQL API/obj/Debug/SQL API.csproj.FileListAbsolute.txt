@@ -172,3 +172,7 @@ C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.csproj.CoreCompileInputs.cache
 C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.csproj.CopyComplete
 C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.exe
 C:\Users\harbinger\USH\SQL API\obj\Debug\SQL API.pdb
+C:\Users\harbinger\USH\SQL API\bin\Debug\EntityFramework.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\harbinger\USH\SQL API\bin\Debug\EntityFramework.xml
+C:\Users\harbinger\USH\SQL API\bin\Debug\EntityFramework.SqlServer.xml

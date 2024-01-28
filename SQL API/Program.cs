@@ -2,6 +2,7 @@
 using Microsoft.Identity.Client;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace SQL_API
 {
@@ -123,56 +124,74 @@ namespace SQL_API
                 string csvFilePath = "gas_averages - U.S._All_Grades_All_Formulations_Retail_Gasoline_Prices (2) (1).csv";
 
                 // CONNECT TO DB
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                try
                 {
-                    connection.Open(); 
-
-                    // CSV
-                    using (var reader = new StreamReader(csvFilePath))
+                    using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        string headerLine = reader.ReadLine(); // EXCLUDING HEADER
+                        connection.Open();
 
-                        while (!reader.EndOfStream)
+                        // CSV
+                        using (var reader = new StreamReader(csvFilePath))
                         {
-                            var line = reader.ReadLine();
-                            var values = line.Split(',');
+                            string headerLine = reader.ReadLine(); // EXCLUDING HEADER
 
-                            string tableName = "testTable";
-                            string columnValue1 = values[0];
-                            string columnValue2 = values[1];
-                            string sqlInsert = $"INSERT INTO {tableName} (dates, avg_gas_price) VALUES ('{columnValue1}', {columnValue2})";
-
-                            // INSPECT SQL COMMAND
-                            Console.WriteLine(sqlInsert); 
-
-                            // Execute the SQL command
-                            using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                            while (!reader.EndOfStream)
                             {
+                                var line = reader.ReadLine();
+                                var values = line.Split(',');
 
-                                command.ExecuteNonQuery();
+                                //string tableName = "testTable";
+                                string columnValue1 = values[0];
+                                string columnValue2 = values[1];
+                                double price = double.Parse(values[1]);
+
+
+                                // Execute the SQL command
+                                using (var orm = new testDatabaseEntities())
+                                {
+                                    var found = orm.testTable.Where(x=>x.dates == columnValue1 && x.avg_gas_price == price).FirstOrDefault();
+
+                                    if (found == null) 
+                                    { 
+                                        testTable r = new testTable() { dates = columnValue1, avg_gas_price = price };
+                                        orm.testTable.Add(r);
+                                        orm.SaveChanges();
+                                     }
+                                    //else
+                                    //{
+                                    //    found.avg_gas_price = found.avg_gas_price * 10;
+                                    //    orm.SaveChanges();
+                                    //}
+
+                                    //command.ExecuteNonQuery();
+                                }
                             }
                         }
-                    }
 
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine(ex.ToString());
                 }
             }
         }
-    } 
+    }
 }
 
 
-                        //{
-                        //    try
-                        //    {
-                        //        connection.Open();
-                        //        int rowsAffected = command.ExecuteNonQuery();
-                        //        Console.WriteLine($"Rows affected: {rowsAffected}");
-                        //    }
-                        //    catch (Exception ex)
-                        //    {
-                        //        Console.WriteLine("Error executing SQL command: " + ex.Message);
-                        //    }
-                        //}
+//{
+//    try
+//    {
+//        connection.Open();
+//        int rowsAffected = command.ExecuteNonQuery();
+//        Console.WriteLine($"Rows affected: {rowsAffected}");
+//    }
+//    catch (Exception ex)
+//    {
+//        Console.WriteLine("Error executing SQL command: " + ex.Message);
+//    }
+//}
 
 
 
@@ -180,36 +199,36 @@ namespace SQL_API
 
 
 
-                    // INSERT INTO DB
-                    //string tableName = "Table_1";
-                    //string columnName1 = "date";
-                    //string columnName2 = "avg_gas_price";
+// INSERT INTO DB
+//string tableName = "Table_1";
+//string columnName1 = "date";
+//string columnName2 = "avg_gas_price";
 
-                    //string sqlInsert = $"INSERT INTO {tableName} ({columnName1}, {columnName2}) VALUES ('{0}')";
-                    
-
-
-                    //using (SqlCommand command = new SqlCommand(sqlInsert, connection))
-                    
-                    //{
+//string sqlInsert = $"INSERT INTO {tableName} ({columnName1}, {columnName2}) VALUES ('{0}')";
 
 
-                        //using (SqlCommand _command = new SqlCommand (sqlInsert, connection))
-                        //{
-                        //    // CHECK IF ROW WAS ADDED SUCCESSFULLY
-                        //    int rowsAffected = command.ExecuteNonQuery();
 
-                        //    if (rowsAffected > 0)
-                        //    {
-                        //        Console.WriteLine("Insert Into Table");
-                        //        Console.WriteLine($"{currentDateTime}");
-                        //    }    
-                        //    else
-                        //    {
-                        //        Console.WriteLine("Failed to add a new row.");
-                        //    }    
-                        //}
-                    //}
+//using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+
+//{
+
+
+//using (SqlCommand _command = new SqlCommand (sqlInsert, connection))
+//{
+//    // CHECK IF ROW WAS ADDED SUCCESSFULLY
+//    int rowsAffected = command.ExecuteNonQuery();
+
+//    if (rowsAffected > 0)
+//    {
+//        Console.WriteLine("Insert Into Table");
+//        Console.WriteLine($"{currentDateTime}");
+//    }    
+//    else
+//    {
+//        Console.WriteLine("Failed to add a new row.");
+//    }    
+//}
+//}
 
 //}
 
