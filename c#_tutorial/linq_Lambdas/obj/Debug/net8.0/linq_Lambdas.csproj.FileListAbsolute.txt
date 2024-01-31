@@ -1,0 +1,15 @@
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\bin\Debug\net8.0\linq_Lambdas.exe
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\bin\Debug\net8.0\linq_Lambdas.deps.json
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\bin\Debug\net8.0\linq_Lambdas.runtimeconfig.json
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\bin\Debug\net8.0\linq_Lambdas.dll
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\bin\Debug\net8.0\linq_Lambdas.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.AssemblyInfoInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.AssemblyInfo.cs
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.csproj.CoreCompileInputs.cache
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.sourcelink.json
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.dll
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\refint\linq_Lambdas.dll
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.pdb
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\linq_Lambdas.genruntimeconfig.cache
+C:\Users\patri\Documents\USH\c#_tutorial\linq_Lambdas\obj\Debug\net8.0\ref\linq_Lambdas.dll
