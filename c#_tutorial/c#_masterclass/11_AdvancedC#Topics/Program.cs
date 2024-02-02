@@ -130,6 +130,39 @@ class Program
         // IF NUM6 IS NULL - ASSIGN 6
         int num6 = num4 ?? 5;
         System.Console.WriteLine(num6);
+
+        // -----------------
+
+        // MAIN (STRING[] ARGS)
+        System.Console.WriteLine("Console App (Type 'help' for instructions): ");
+        Console.ReadKey();
+
+
+        if (args.Length != 3)
+        {
+            System.Console.WriteLine("Incorrect number of arguments.");
+        }
+        else if (args[0] == "help")
+        {
+            System.Console.WriteLine("Use one of the following commands followed by 2 numbers.");
+            System.Console.WriteLine("'add' to add the 2 numbers");
+            System.Console.WriteLine("'sub' to subtract the 2 numbers");
+        }
+        else if (args[0] == "add" || args[0] == "sub")
+        {
+            int consoleNum1 = Convert.ToInt32(args[1]);
+            int consoleNum2 = Convert.ToInt16(args[2]);
+
+            if (args[0] == "add")
+            {
+                int result = consoleNum1 + consoleNum2;
+            }
+            else
+            {
+                int result = consoleNum1 - consoleNum2;
+            }
+        }
+        
     }
 
 }
