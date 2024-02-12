@@ -8,23 +8,23 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\harbinger\\.nuget\\packages\\": {},
+    "C:\\Users\\patri\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\harbinger\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\11_AdvancedC#Topics.csproj",
+      "projectUniqueName": "C:\\Users\\patri\\Documents\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\11_AdvancedC#Topics.csproj",
       "projectName": "11_AdvancedC#Topics",
-      "projectPath": "C:\\Users\\harbinger\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\11_AdvancedC#Topics.csproj",
-      "packagesPath": "C:\\Users\\harbinger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\harbinger\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\obj\\",
+      "projectPath": "C:\\Users\\patri\\Documents\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\11_AdvancedC#Topics.csproj",
+      "packagesPath": "C:\\Users\\patri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\patri\\Documents\\USH\\c#_tutorial\\c#_masterclass\\11_AdvancedC#Topics\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\harbinger\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\patri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

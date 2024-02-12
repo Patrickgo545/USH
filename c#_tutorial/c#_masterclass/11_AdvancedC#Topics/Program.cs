@@ -135,18 +135,18 @@ class Program
 
         // MAIN (STRING[] ARGS)
         System.Console.WriteLine("Console App (Type 'help' for instructions): ");
-        Console.ReadKey();
+        Console.Read();
 
 
-        if (args.Length != 3)
-        {
-            System.Console.WriteLine("Incorrect number of arguments.");
-        }
-        else if (args[0] == "help")
+        if (args[0] == "help")
         {
             System.Console.WriteLine("Use one of the following commands followed by 2 numbers.");
             System.Console.WriteLine("'add' to add the 2 numbers");
             System.Console.WriteLine("'sub' to subtract the 2 numbers");
+        }
+        else if (args.Length != 3)
+        {
+            System.Console.WriteLine("Incorrect number of arguments.");
         }
         else if (args[0] == "add" || args[0] == "sub")
         {
