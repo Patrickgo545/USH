@@ -5,7 +5,7 @@ Using all of the given information, select the USH Codes that identify problems 
 
 <applicant_data>
 
-After identifying the USH Codes which identify the applicant''s challenges, summarize the applicant''s situation. 
+After identifying the USH Codes which identify the applicants challenges, summarize the applicants situation. 
 
 Estimate ush_risk using system: Risk Chart
 
@@ -129,60 +129,60 @@ USH65.8: Other specified problems related to psychosocial circumstances
 USH65.9: Problem related to unspecified psychosocial circumstances"
 USH Codes Frequency,"USH Code problems listed from most to least common:
 [
-""Problems related to food insecurity"",
-""Problems related to economic circumstances like poverty, insufficient social insurance"",
-""Problems related to housing"",
-""Problems related to employment and unemployment"",
-""Problems related to social environment like feeling lonely or depressed"",
-""Problems related to medical, dental or grocery transportation"",
-""Problems related to education and literacy"",
-""Problems related to physical environment"",
-""Problems related to upbringing and parent/child"",
-""Problems related to primary support group, including family circumstances"",
-""Problems related to psychosocial circumstances"",
-""Problems related to occupational exposure to risk factors""
+'Problems related to food insecurity',
+'Problems related to economic circumstances like poverty, insufficient social insurance',
+'Problems related to housing',
+'Problems related to employment and unemployment',
+'Problems related to social environment like feeling lonely or depressed',
+'Problems related to medical, dental or grocery transportation',
+'Problems related to education and literacy',
+'Problems related to physical environment',
+'Problems related to upbringing and parent/child',
+'Problems related to primary support group, including family circumstances',
+'Problems related to psychosocial circumstances',
+'Problems related to occupational exposure to risk factors'
 ]"
 USH Code Poverty Guidelines,"{
-""Individuals"": 14580,
-""Family of 2"": 19720,
-""Family of 3"": 24860,
-""Family of 4"": 30000,
-""Family of 5"": 35140,
-""Family of 6"": 40280,
-""Family of 7"": 45420,
-""Family of 8"": 50560,
-""Family of 9+"": ""Add $5,140 for each extra person""
+'Individuals': 14580,
+'Family of 2': 19720,
+'Family of 3': 24860,
+'Family of 4': 30000,
+'Family of 5': 35140,
+'Family of 6': 40280,
+'Family of 7': 45420,
+'Family of 8': 50560,
+'Family of 9+': 'Add $5,140 for each extra person'
 }"
 Risk Chart,"[
     {
-        ""Risk"": ""5:Critical"",
-        ""Risk Score Range"": ""998-1000"",
-        ""Definition"": ""Applicant summary references recent abuse or self-harm or recent hospitalization or sexual trafficking. Additionally, they are at immediate risk of starvation due to lack of access to food.""
+        'Risk': '5:Critical',
+        'Risk Score Range': '998-1000',
+        'Definition': 'Applicant summary references recent abuse or self-harm or recent hospitalization or sexual trafficking. Additionally, they are at immediate risk of starvation due to lack of access to food.'
     },
     {
-        ""Risk"": ""4:Severe"",
-        ""Risk Score Range"": ""801-997"",
-        ""Definition"": ""Severe challenges in housing, poverty, education, healthcare, and social support. Has no income or assets.""
+        'Risk': '4:Severe',
+        'Risk Score Range': '801-997',
+        'Definition': 'Severe challenges in housing, poverty, education, healthcare, and social support. Has no income or assets.'
     },
     {
-        ""Risk"": ""3:High"",
-        ""Risk Score Range"": ""601-800"",
-        ""Definition"": ""Significant challenges in accessing resources and services.Has some income or assets.""
+        'Risk': '3:High',
+        'Risk Score Range': '601-800',
+        'Definition': 'Significant challenges in accessing resources and services.Has some income or assets.'
     },
     {
-        ""Risk"": ""2:Moderate"",
-        ""Risk Score Range"": ""401-600"",
-        ""Definition"": ""Intermittent instability impacting well-being. Has stable employment but suffers from occasional resource gaps.""
+        'Risk': '2:Moderate',
+        'Risk Score Range': '401-600',
+        'Definition': 'Intermittent instability impacting well-being. Has stable employment but suffers from occasional resource gaps.'
     },
     {
-        ""Risk"": ""1:Low"",
-        ""Risk Score Range"": ""201-400"",
-        ""Definition"": ""Occasional difficulties in accessing resources. Has stable income.""
+        'Risk': '1:Low',
+        'Risk Score Range': '201-400',
+        'Definition': 'Occasional difficulties in accessing resources. Has stable income.'
     },
     {
-        ""Risk"": ""0:None"",
-        ""Risk Score Range"": ""0-200"",
-        ""Definition"": ""Secure housing, stable income, education, healthcare, and social support.""
+        'Risk': '0:None',
+        'Risk Score Range': '0-200',
+        'Definition': 'Secure housing, stable income, education, healthcare, and social support.'
     }
 ]"
 Calculations,"let ush_lowest = the low bound of ush_risk  
@@ -191,55 +191,55 @@ let ush_codes = the number of USH Codes that you selected
 let ush_risk_intensity = the lesser of  (ush_codes / 10.0) or 0.99  
 let ush_offset = ush_delta * ush_risk_intensity"
 JSON," Respond only with JSON using this special format: 
-{      ""summary"": ""maximum 90 word length summarizing the applicant''s situation"",
-	   ""risk"": {""level"": ""ush_risk"",""range"": ""ush_risk range"",""lowest"":""ush_lowest"",
-	   ""delta"":""ush_delta"",""codes"": ""ush_codes"",
-	   ""intensity"": ""ush_risk_intensity"", ""offset"":""ush_offset"",""score"": ""ush_lowest+ush_offset""      },      
-	   ""risk_rationale"": ""explain your risk rating"",      
-	   ""zcode"": [
-	   {              
-		""zcode"": ""USH55.1"",              
-		""description"": ""this is the USH Codes description"",              
-		""rationale"": ""your reason for selecting a USH Code"",              
-		""confidence"": ""a number between 0.00-1.00"",              
-		""quote"": ""write a brief sentence summarizing what the applicant said that supports your conclusion for this code. THIS VALUE MUST FIT INSIDE ONE STRING ONLY. DO NOT BREAK THE PAIR OF QUOTATIONS.""     
-		}   
-			]}
-			
+{      'summary': 'maximum 90 word length summarizing the applicant\'s situation',
+           'risk': {'level': 'ush_risk','range': 'ush_risk range','lowest':'ush_lowest',
+           'delta':'ush_delta','codes': 'ush_codes',
+           'intensity': 'ush_risk_intensity', 'offset':'ush_offset','score': 'ush_lowest+ush_offset'      },      
+           'risk_rationale': 'explain your risk rating',      
+           'zcode': [
+           {              
+                'zcode': 'USH55.1',              
+                'description': 'this is the USH Codes description',              
+                'rationale': 'your reason for selecting a USH Code',              
+                'confidence': 'a number between 0.00-1.00',              
+                'quote': 'write a brief sentence summarizing what the applicant said that supports your conclusion for this code. THIS VALUE MUST FIT INSIDE ONE STRING ONLY. DO NOT BREAK THE PAIR OF QUOTATIONS.'     
+                }   
+                        ]}
+                        
 Format the JSON output to match this XSD JSON format (provided below).
-<?xml version=""1.0"" encoding=""UTF-8""?>
-<xs:schema xmlns:xs=""http://www.w3.org/2001/XMLSchema"">
-  <xs:element name=""json"">
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+  <xs:element name='json'>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name=""summary"" type=""xs:string""/>
-        <xs:element name=""risk"" type=""RiskType""/>
-        <xs:element name=""risk_rationale"" type=""xs:string""/>
-        <xs:element name=""zcode"" type=""ZCodeType"" minOccurs=""0"" maxOccurs=""unbounded""/>
+        <xs:element name='summary' type='xs:string'/>
+        <xs:element name='risk' type='RiskType'/>
+        <xs:element name='risk_rationale' type='xs:string'/>
+        <xs:element name='zcode' type='ZCodeType' minOccurs='0' maxOccurs='unbounded'/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name=""RiskType"">
+  <xs:complexType name='RiskType'>
     <xs:sequence>
-      <xs:element name=""level"" type=""xs:string""/>
-      <xs:element name=""range"" type=""xs:string""/>
-      <xs:element name=""lowest"" type=""xs:string""/>
-      <xs:element name=""delta"" type=""xs:string""/>
-      <xs:element name=""codes"" type=""xs:string""/>
-      <xs:element name=""intensity"" type=""xs:string""/>
-      <xs:element name=""offset"" type=""xs:string""/>
-      <xs:element name=""score"" type=""xs:string""/>
+      <xs:element name='level' type='xs:string'/>
+      <xs:element name='range' type='xs:string'/>
+      <xs:element name='lowest' type='xs:string'/>
+      <xs:element name='delta' type='xs:string'/>
+      <xs:element name='codes' type='xs:string'/>
+      <xs:element name='intensity' type='xs:string'/>
+      <xs:element name='offset' type='xs:string'/>
+      <xs:element name='score' type='xs:string'/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name=""ZCodeType"">
+  <xs:complexType name='ZCodeType'>
     <xs:sequence>
-      <xs:element name=""zcode"" type=""xs:string""/>
-      <xs:element name=""description"" type=""xs:string""/>
-      <xs:element name=""rationale"" type=""xs:string""/>
-      <xs:element name=""confidence"" type=""xs:decimal""/>
-      <xs:element name=""quote"" type=""xs:string""/>
+      <xs:element name='zcode' type='xs:string'/>
+      <xs:element name='description' type='xs:string'/>
+      <xs:element name='rationale' type='xs:string'/>
+      <xs:element name='confidence' type='xs:decimal'/>
+      <xs:element name='quote' type='xs:string'/>
     </xs:sequence>
   </xs:complexType>
 
