@@ -22,10 +22,8 @@ def isShipmentOnWeekend(shipment_date):
           return False
      
 
-
-
-# IMPORT CSV'S
      
+# IMPORT CSV'S
 # SHIPPING DASHBOARD CSV
 shipments_df = pd.read_csv("shipments_2023.csv")
 
@@ -55,10 +53,11 @@ shipments_df = pd.merge(shipments_df, monthly_gas_averages, how='left', left_on=
 shipments_df['isMajorCity'] = shipments_df['HP City'].apply(isMajorCity)
 # TODO: INCLUDE MAJOR CITY 
 # TODO: INCLUDE IS SHIPMENT ON WEEKEND
+shipments_df.to_csv("Test.csv", index=False)
 
 # OUTBOUND
 outbound_columns = ['Outbound # of Pallets', 'Outbound Total Weight (in lbs)', 'Outbound Type of Truck', 'Price Quoted for Outbound', 'One Way Distance To/From Warehouse', \
-                    'U.S. All Grades All Formulations Retail Gasoline Prices Dollars per Gallon', 'Outbound Type of Truck', 'Load In Date & Time', 'isMajorCity']
+                    'U.S. All Grades All Formulations Retail Gasoline Prices Dollars per Gallon', 'Outbound Type of Truck', 'Load In Date & Time', 'isMajorCity', 'Outbound Type of Truck']
 outbound_df = shipments_df[outbound_columns].copy()
 # outbound_df['shipmentOnWeekend'] = outbound_df['Load In Date & Time'].apply(isShipmentOnWeekend)
 # print(outbound_df['shipmentOnWeekend'])
@@ -66,7 +65,7 @@ outbound_df = shipments_df[outbound_columns].copy()
 
 # INBOUND
 inbound_columns = ['Return # of Pallets', 'Return Total Weight', 'Return Type of Truck', 'Price Quoted for Return', 'One Way Distance To/From Warehouse', \
-                   'U.S. All Grades All Formulations Retail Gasoline Prices Dollars per Gallon', 'Return Type of Truck', 'Load Out Date & Time', 'isMajorCity']
+                   'U.S. All Grades All Formulations Retail Gasoline Prices Dollars per Gallon', 'Return Type of Truck', 'Load Out Date & Time', 'isMajorCity', 'Return Type of Truck']
 inbound_df = shipments_df[inbound_columns].copy()
 
 #CREATE WORKING DF
@@ -78,6 +77,7 @@ df['avg_gas_price'] = pd.concat([outbound_df['U.S. All Grades All Formulations R
                                  inbound_df['U.S. All Grades All Formulations Retail Gasoline Prices Dollars per Gallon']], ignore_index=True)
 df['quote'] = pd.concat([outbound_df['Price Quoted for Outbound'], inbound_df['Price Quoted for Return']], ignore_index=True)
 df['isMajorCity'] = pd.concat([outbound_df['isMajorCity'], inbound_df['isMajorCity']], ignore_index=True)
+df['shipmentType']= pd.concat([outbound_df['Outbound Type of Truck'], inbound_df['Return Type of Truck']], ignore_index=True)
 
 # TODO: df - on weekend
 
@@ -92,7 +92,4 @@ df['pallets'] = df['pallets'].astype(float)
 
 df = df.dropna(axis=0)
 
-# OLD CALCULATOR 
-# df["Old Calculator"] = (((df["distance"] * .114 + 105) * df["pallets"]) + 150 + 22.5)
-
-# SHOW RESULTS
+print(df)
