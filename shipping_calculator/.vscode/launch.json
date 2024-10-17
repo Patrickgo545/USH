@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "C:/Users/patri/Documents/USH/shipping_calculator/main.py",
+            "console": "integratedTerminal",
+            "cwd": "C:/Users/patri/Documents/USH/shipping_calculator/"
+        }
+    ]
+}
