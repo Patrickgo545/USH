@@ -93,3 +93,4 @@ df['quote'] = df['quote'].str.replace("$", '').str.replace(',', '').astype(float
 df['pallets'] = df['pallets'].astype(float)
 
 df = df.dropna(axis=0)
+# print(df[df['shipmentType'] == "LTL"])

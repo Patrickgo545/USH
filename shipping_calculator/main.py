@@ -13,9 +13,7 @@ import json
 
 
 shipment_variables = {
-  "shipment_type": { 
-      "ltl": ["pallets", "weight", "distance", "avg_gas_price"]
-  }
+    "ltl": ["pallets", "weight", "distance", "avg_gas_price"]
 }
 
 
@@ -23,11 +21,12 @@ def ExtractCoefficients(shipment_type, variable_list):
     coef_labels = variable_list
     
     regressor = CoefficientModule(shipment_type, coef_labels)
-    regressor.TrainRegressor()
+    regressor.TrainRegressor("LTL")
     
     coefficient_dict = regressor.results_dictionary
     
     return coefficient_dict
 
-ltl = ExtractCoefficients("ltl", shipment_variables["shipment_type"]["ltl"])
-print(ltl)
+shipment_var = shipment_variables["ltl"]
+ltl = ExtractCoefficients("LTL", shipment_var)
+# print(ltl)

@@ -5,9 +5,9 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "C:/Users/patri/Documents/USH/shipping_calculator/main.py",
+            "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "cwd": "C:/Users/patri/Documents/USH/shipping_calculator/"
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
