@@ -27,8 +27,6 @@ class CoefficientModule:
         
         # DEPENDENT VARIABLE
         y = working_df['quote']
-        print(y)
-        print(working_df)
 
         # SPLIT DATASET
         X_train, X_test, y_train, y_test = train_test_split(self.x_variables,y,test_size=0.2, random_state=0)
@@ -47,7 +45,3 @@ class CoefficientModule:
         
         
         self.results_dictionary = {variable:coef for variable, coef in zip(self.variables, self.coefficients)}       
-
-    
-
-    # TODO: Ship results into CSV for inspections
