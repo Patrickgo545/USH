@@ -6,7 +6,7 @@ from data import df
 
 
 
-class CoefficientModule:
+class Regressor:
 
     def __init__(self, shipment_type, coef_labels):
         self.full_df = df
@@ -17,6 +17,8 @@ class CoefficientModule:
         self.variables = None
         self.coefficients = coef_labels
         self.results_dictionary = {}
+        self.regressor = None
+        self.intercept = None
 
 
 
@@ -32,15 +34,16 @@ class CoefficientModule:
         X_train, X_test, y_train, y_test = train_test_split(self.x_variables,y,test_size=0.2, random_state=0)
 
         # TRAINING MODEL
-        regressor = LinearRegression()
-        regressor.fit(X_train,y_train)
+        self.regressor = LinearRegression()
+        self.regressor.fit(X_train,y_train)
+        self.intercept = self.regressor.intercept_
 
         # VALIDATING MODEL
-        y_pred = regressor.predict(X_test)
+        y_pred = self.regressor.predict(X_test)
         self.results = pd.DataFrame({'Actual':y_test, 'Predicted':y_pred})
 
         # EXTRACT COEFFICIENTS
-        self.coefficients = regressor.coef_
+        self.coefficients = self.regressor.coef_
         self.variables = self.x_variables.columns  
         
         

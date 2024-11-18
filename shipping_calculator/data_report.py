@@ -8,13 +8,14 @@ import seaborn as sns
 from fpdf import FPDF
 
 class ShipmentReport:
-    def __init__(self, shipment_type, coefficient_dictionary, df):
+    def __init__(self, shipment_type, coefficient_dictionary, df, intercept):
         self.shipment_type = shipment_type
         self.coefficients = coefficient_dictionary
         self.df = df
         self.filtered_df = None
         self.total_error = None
         self.mean_absolute_error = None
+        self.intercept = intercept
         self.interpret_coefficients()
         self.Calculate_Metrics()
         
@@ -26,7 +27,7 @@ class ShipmentReport:
 
         # Calculate predicted prices
         self.filtered_df['predicted_price'] = self.filtered_df.apply(
-            lambda row: sum(row[variable] * coef for variable, coef in self.coefficients.items()),
+            lambda row: sum(row[variable] * coef for variable, coef in self.coefficients.items()) + self.intercept,
             axis=1
         )
 
