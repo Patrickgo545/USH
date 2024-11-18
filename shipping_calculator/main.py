@@ -1,11 +1,18 @@
 import pandas as pd
-from data import df
+from data import ShippingData
 from regressor_module import Regressor
 import json
 from data_report import ShipmentReport
 from fpdf import FPDF
 import matplotlib.pyplot as plt
 
+
+# DATAFRAME
+shipping_data = ShippingData()
+shipping_data.load_csv("./shipments_2023.csv","shipments")
+shipping_data.load_csv("./gas_averages - U.S._All_Grades_All_Formulations_Retail_Gasoline_Prices (2) (1).csv", "gas_averages")
+shipping_data.process_data()
+shipping_data.create_dataframe()
 
 class ShippingCalculator:
     def __init__(self, df):
@@ -33,7 +40,7 @@ class ShippingCalculator:
             variable_list = self.shipment_variables[shipment_type]
 
             # Create and train the regressor
-            regressor = Regressor(shipment_type, variable_list)
+            regressor = Regressor(shipment_type, variable_list, self.df)
             regressor.TrainRegressor(shipment_type)
             self.intercept_dictionary[shipment_type] = regressor.intercept
             self.shipment_regressors[shipment_type] = regressor
@@ -87,18 +94,4 @@ class ShippingCalculator:
         print(f"Consolidated report saved to {output_file}")
     
     
-test = ShippingCalculator(df)
-    
-     
-
-# CREATE REPORT
-report = {}
-
-store = {
-            "LTL": ["pallets", "weight", "distance", "avg_gas_price"],
-            "FTL": ["weight", "distance", "avg_gas_price"],
-            "Box Truck": ["pallets", "weight", "distance", "avg_gas_price"],
-            "Sprinter Van": ["distance", "avg_gas_price"]
-        }
-# for shipment_type, coefficients in result.items():
-#     report[shipment_type] = ShipmentReport(shipment_type, coefficients, df) 
+test = ShippingCalculator(shipping_data.df)

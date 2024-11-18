@@ -2,13 +2,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import pandas as pd
-from data import df
 
 
 
 class Regressor:
 
-    def __init__(self, shipment_type, coef_labels):
+    def __init__(self, shipment_type, coef_labels, df):
         self.full_df = df
 
         self.coef_labels = coef_labels
