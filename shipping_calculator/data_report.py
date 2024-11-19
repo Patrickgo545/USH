@@ -59,7 +59,6 @@ class ShipmentReport:
         # Save graph to file if output_file is provided
         if output_file:
             plt.savefig(output_file)
-            print(f"Graph saved to {output_file}")
 
     def generate_report(self, output_file=None):
 
@@ -83,8 +82,3 @@ class ShipmentReport:
 
             # Save PDF
             pdf.output(output_file)
-
-# test = ShipmentTypePredictor('LTL', result['LTL'], df=df)
-# print(test.total_error, test.mean_absolute_error)
-# test.generate_report("LTL_Report.pdf")
-# test.result_line_graph()
