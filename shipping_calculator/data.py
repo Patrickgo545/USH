@@ -10,6 +10,84 @@ def clean_column(column, pattern=r'[^\d\.]', dtype=float):
     return column.apply(lambda x: re.sub(pattern, '', str(x))).astype(dtype)
 
 
+
+class GasPriceHandler:
+    def __init__(self, gas_prices_csv_path):
+        """
+        Initialize the GasPriceHandler with the gas prices CSV.
+        """
+        self.gas_prices_csv = gas_prices_csv_path
+        self.gas_prices_df = None
+        self.load_gas_prices()
+        
+        
+    def read_specific_tab(self, file_path, sheet_name):
+          """
+          Reads a specific tab from the Excel file and returns the DataFrame.
+          
+          Parameters:
+               file_path (str): Path to the Excel file.
+               sheet_name (str): Name of the sheet to read (e.g., 'Data 1').
+          
+          Returns:
+               pd.DataFrame: DataFrame containing the sheet data.
+          """
+          try:
+               # Read the specified sheet
+               df = pd.read_excel(file_path, sheet_name=sheet_name, engine="openpyxl")
+               return df
+          except Exception as e:
+               print(f"Error reading sheet {sheet_name} from {file_path}: {e}")
+               return None
+     
+
+    def load_gas_prices(self):
+        """
+        Load the gas prices CSV and format the dates.
+        """
+        self.gas_prices_df = pd.read_csv(self.gas_prices_csv)
+        self.gas_prices_df.rename(
+            columns={
+                'Date': 'Gas Price Date',
+                'Weekly U.S. All Grades All Formulations Retail Gasoline Prices  (Dollars per Gallon)': 'avg_gas_price',
+            },
+            inplace=True,
+        )
+        self.gas_prices_df['Gas Price Date'] = pd.to_datetime(
+            self.gas_prices_df['Gas Price Date'], format='%b %d, %Y'
+        )
+        self.gas_prices_df.sort_values(by='Gas Price Date', inplace=True)
+
+    def find_closest_gas_price(self, project_date):
+        """
+        Find the closest gas price date for a given project date.
+        """
+        gas_dates = self.gas_prices_df['Gas Price Date']
+        closest_date_idx = (gas_dates - project_date).abs().idxmin()
+        return self.gas_prices_df.loc[closest_date_idx, 'avg_gas_price']
+
+    def assign_gas_prices_to_project_dates(self, project_df, project_date_col):
+        """
+        Assign average gas prices to the closest gas price date for project dates in the given DataFrame.
+
+        Parameters:
+            project_df (pd.DataFrame): DataFrame containing project dates.
+            project_date_col (str): Name of the column containing project dates.
+
+        Returns:
+            pd.DataFrame: DataFrame with an added column for average gas prices.
+        """
+        if project_date_col not in project_df.columns:
+            raise ValueError(f"Column {project_date_col} not found in the project DataFrame.")
+
+        # Ensure project dates are in datetime format
+        project_df[project_date_col] = pd.to_datetime(project_df[project_date_col])
+
+        # Assign gas prices
+        project_df['avg_gas_price'] = project_df[project_date_col].apply(self.find_closest_gas_price)
+        return project_df
+
+
 class ShippingData:
     def __init__(self):
         self.shipments_df = None
@@ -79,3 +157,5 @@ class ShippingData:
         })
         df.dropna(inplace=True)
         return df
+
+
